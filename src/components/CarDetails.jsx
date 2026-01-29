@@ -11,7 +11,7 @@ function CarDetails() {
             "vehicle_model": "Swift Dzire CNG",
             "on_road_price_inr": 820000,
             "bank_loan_inr": 600000,
-            "down_payment_inr": 230000,
+            "down_payment_inr": 220000 + (10000),
             "loan_emi": {
                 "amount_inr": 17000,
                 "tenure_months": 48
@@ -102,7 +102,9 @@ function CarDetails() {
                     </div>
                     <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-lg border-l-4 border-orange-600 hover:shadow-xl transition-shadow">
                         <p className="text-gray-500 text-xs sm:text-sm font-medium uppercase tracking-wide">Entry Capital</p>
-                        <p className="text-xl sm:text-2xl font-bold text-gray-800 mt-1">₹{data.investment_details.down_payment_inr.toLocaleString()}</p>
+                        <p className="text-xl sm:text-2xl font-bold text-gray-800 mt-1">
+                            ₹2,20,000 <span className="text-orange-600">+</span> ₹10,000
+                        </p>
                     </div>
                 </div>
 
@@ -124,7 +126,7 @@ function CarDetails() {
                                     <h3 className="text-base sm:text-lg font-semibold text-gray-700 mb-3 sm:mb-4 border-b pb-2">Investment Details</h3>
                                     <ul className="space-y-3 sm:space-y-4">
                                         <li className="flex justify-between items-center gap-2"><span className="text-sm sm:text-base text-gray-600">On-Road Price</span> <span className="text-sm sm:text-base font-bold">₹{data.investment_details.on_road_price_inr.toLocaleString()}</span></li>
-                                        <li className="flex justify-between items-center gap-2"><span className="text-sm sm:text-base text-gray-600">Down Payment</span> <span className="text-sm sm:text-base font-bold text-blue-600">₹{data.investment_details.down_payment_inr.toLocaleString()}</span></li>
+                                        <li className="flex justify-between items-center gap-2"><span className="text-sm sm:text-base text-gray-600">Down Payment</span> <span className="text-sm sm:text-base font-bold text-blue-600">₹2,20,000 <span className="text-orange-600">+</span> ₹10,000</span></li>
                                         <li className="flex justify-between items-center gap-2"><span className="text-sm sm:text-base text-gray-600">Bank Loan</span> <span className="text-sm sm:text-base font-bold">₹{data.investment_details.bank_loan_inr.toLocaleString()}</span></li>
                                         <li className="bg-blue-50 p-2 sm:p-3 rounded-lg mt-2">
                                             <p className="text-xs sm:text-sm text-gray-500 mb-1">Loan EMI ({data.investment_details.loan_emi.tenure_months} months)</p>
@@ -141,6 +143,7 @@ function CarDetails() {
                                         <li className="flex justify-between items-center gap-2"><span className="text-sm sm:text-base text-gray-600">Monthly Rental</span> <span className="text-sm sm:text-base font-bold text-green-600">+₹{data.investment_details.monthly_rental_income_inr.toLocaleString()}</span></li>
                                         <li className="flex justify-between items-center gap-2"><span className="text-sm sm:text-base text-gray-600">EMI Deduction</span> <span className="text-sm sm:text-base font-bold text-red-500">-₹{data.investment_details.loan_emi.amount_inr.toLocaleString()}</span></li>
                                         <li className="flex justify-between items-center border-t pt-2 mt-2 gap-2"><span className="text-sm sm:text-base text-gray-800 font-medium">Net Monthly Cash</span> <span className="text-lg sm:text-xl font-bold text-gray-900">₹{data.investment_details.net_monthly_cash_inr.toLocaleString()}</span></li>
+                                        <li className="flex justify-between items-center gap-2"><span className="text-sm sm:text-base text-gray-600">Insurance</span> <span className="text-sm sm:text-base font-bold text-red-500">-₹{20000}</span></li>
                                         <li className="flex justify-between items-center pt-3 sm:pt-4 gap-2"><span className="text-sm sm:text-base text-gray-600">Net Annual Income</span> <span className="text-sm sm:text-base font-bold text-blue-600">₹{data.income_analysis.net_annual_income_inr.toLocaleString()}</span></li>
                                     </ul>
                                 </div>
@@ -182,7 +185,7 @@ function CarDetails() {
                                     {/* This Model */}
                                     <div>
                                         <div className="flex justify-between mb-2 gap-2">
-                                            <span className="text-sm sm:text-base text-blue-700 font-bold">SETS Model</span>
+                                            <span className="text-sm sm:text-base text-blue-700 font-bold">SETS Model (33%)</span>
                                             <span className="text-sm sm:text-base font-bold text-blue-700">₹{data.comparison.this_model_yearly_return_inr.toLocaleString()}</span>
                                         </div>
                                         <div className="w-full bg-blue-100 rounded-full h-5 sm:h-6 border border-blue-200 relative">
